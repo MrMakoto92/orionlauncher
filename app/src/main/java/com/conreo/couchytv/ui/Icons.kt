@@ -1,4 +1,4 @@
-package com.conreo.couchytv.ui
+package dev.orionlabs.oriontv.ui
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.SolidColor
