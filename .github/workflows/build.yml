@@ -1,4 +1,4 @@
-name: Build
+name: Build Orion
 
 on:
   push:
@@ -47,10 +47,10 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           APK="app/build/outputs/apk/release/app-release.apk"
-          RELEASE_APK="Couchy-Launcher-${{ github.ref_name }}.apk"
+          RELEASE_APK="Orion-Launcher-${{ github.ref_name }}.apk"
           cp "$APK" "$RELEASE_APK"
           gh release delete "${{ github.ref_name }}" --yes --cleanup-tag 2>/dev/null || true
           gh release create "${{ github.ref_name }}" \
             "$RELEASE_APK" \
-            --title "Couchy-Launcher ${{ github.ref_name }}" \
+            --title "Orion-Launcher ${{ github.ref_name }}" \
             --generate-notes
