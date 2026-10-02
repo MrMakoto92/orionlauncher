@@ -1,4 +1,4 @@
-package com.conreo.couchytv.data
+package dev.orionlabs.oriontv.data
 
 import android.content.Context
 import android.net.ConnectivityManager
