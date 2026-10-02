@@ -1,4 +1,4 @@
-package com.conreo.couchytv.ui
+package dev.orionlabs.oriontv.ui
 
 import android.app.role.RoleManager
 import android.content.Context
