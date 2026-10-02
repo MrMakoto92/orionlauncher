@@ -1,4 +1,4 @@
-package com.conreo.couchytv.ui
+package dev.orionlabs.oriontv.ui
 
 import android.graphics.BitmapFactory
 import androidx.compose.animation.AnimatedVisibility
