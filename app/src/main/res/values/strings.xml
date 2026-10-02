@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Couchy Launcher</string>
+    <string name="app_name">Orion Launcher</string>
 
     <!-- Default category names (first install) -->
     <string name="cat_streaming">Streaming</string>
@@ -161,7 +161,7 @@
     <string name="about_source">Source code</string>
     <string name="about_coffee" translatable="false">Buy me a coffee</string>
     <string name="github_url" translatable="false">https://github.com/conreo/couchy-launcher</string>
-    <string name="about_thirdparty">Couch artwork: Twemoji (MIT). Aerial videos: Apple, Amazon and community collections.</string>
+    <string name="about_thirdparty">Orion artwork: Twemoji (MIT). Aerial videos: Apple, Amazon and community collections.</string>
     <string name="rerun_wizard">Run setup wizard again</string>
     <string name="rerun_wizard_sub">Default-launcher setup and first-run tips</string>
 
