@@ -12,7 +12,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.setValue
-import com.conreo.couchytv.ui.LauncherApp
+import dev.orionlabs.oriontv.ui.LauncherApp
 import java.util.Locale
 
 class MainActivity : ComponentActivity() {
