@@ -4,7 +4,7 @@
 
 <img src="art/couchy-launcher.svg" width="120" alt="Couchy Launcher logo" />
 
-# Couchy Launcher
+# Orion Launcher
 
 **A fast, private, one-screen home launcher for Android TV & Google TV.**
 
