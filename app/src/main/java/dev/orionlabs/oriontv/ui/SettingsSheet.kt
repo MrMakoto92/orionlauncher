@@ -896,7 +896,7 @@ private fun LanguageScreen(
             modifier = Modifier.padding(bottom = 12.dp, start = 8.dp),
         )
         val f = initialFocus()
-        com.conreo.couchytv.data.LANGUAGES.forEachIndexed { i, code ->
+        dev.orionlabs.oriontv.data.LANGUAGES.forEachIndexed { i, code ->
             // Endonym: each language named in its own tongue (no per-language strings)
             val label = if (code.isEmpty()) stringResource(R.string.lang_system)
             else java.util.Locale(code).let { it.getDisplayName(it) }
