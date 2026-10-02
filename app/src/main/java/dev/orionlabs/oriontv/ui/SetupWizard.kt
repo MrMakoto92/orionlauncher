@@ -44,8 +44,8 @@ import androidx.compose.ui.unit.dp
 import androidx.tv.material3.Button
 import androidx.tv.material3.MaterialTheme
 import androidx.tv.material3.Text
-import com.conreo.couchytv.Actions
-import com.conreo.couchytv.R
+import dev.orionlabs.oriontv.Actions
+import dev.orionlabs.oriontv.R
 import java.net.Inet4Address
 import java.net.NetworkInterface
 
