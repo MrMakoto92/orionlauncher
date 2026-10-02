@@ -21,7 +21,7 @@ import androidx.compose.ui.input.key.onPreviewKeyEvent
 import androidx.compose.ui.input.key.type
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.conreo.couchytv.R
+import dev.orionlabs.oriontv.R
 import androidx.compose.ui.window.Dialog
 import androidx.tv.material3.Icon
 import androidx.tv.material3.ListItem
@@ -29,7 +29,7 @@ import androidx.tv.material3.MaterialTheme
 import androidx.tv.material3.Surface
 import androidx.tv.material3.SurfaceDefaults
 import androidx.tv.material3.Text
-import com.conreo.couchytv.data.AppEntry
+import dev.orionlabs.oriontv.data.AppEntry
 
 data class MenuEntry(
     val label: String,
