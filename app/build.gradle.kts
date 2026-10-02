@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace = "com.conreo.couchytv"
+    namespace = "dev.orionlabs.oriontv"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.conreo.couchytv"
+        applicationId = "dev.orionlabs.oriontv"
         minSdk = 21
         targetSdk = 34
         versionCode = 7
