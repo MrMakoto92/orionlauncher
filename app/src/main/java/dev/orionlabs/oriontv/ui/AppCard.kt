@@ -35,7 +35,7 @@ import androidx.tv.material3.MaterialTheme
 import androidx.tv.material3.Surface
 import androidx.tv.material3.Text
 import androidx.compose.foundation.BorderStroke
-import com.conreo.couchytv.data.AppEntry
+import dev.orionlabs.oriontv.data.AppEntry
 
 
 @Composable
