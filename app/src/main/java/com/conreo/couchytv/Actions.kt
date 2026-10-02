@@ -1,4 +1,4 @@
-package com.conreo.couchytv
+package dev.orionlabs.oriontv
 
 import android.content.Context
 import android.content.Intent
