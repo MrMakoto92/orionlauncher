@@ -233,8 +233,8 @@ fun LauncherApp(rescanTick: Int) {
     // locale takes effect without a restart.
     val activity = remember(context) { context.findActivity() }
     LaunchedEffect(config.language) {
-        if (com.conreo.couchytv.MainActivity.currentLocalePref(context) != config.language) {
-            com.conreo.couchytv.MainActivity.persistLocale(context, config.language)
+        if (dev.orionlabs.oriontv.MainActivity.currentLocalePref(context) != config.language) {
+            dev.orionlabs.oriontv.MainActivity.persistLocale(context, config.language)
             activity?.recreate()
         }
     }
@@ -309,7 +309,7 @@ fun LauncherApp(rescanTick: Int) {
         }
     }
     val date by produceState(initialValue = "", config.dateFormat, locale, resumeTick) {
-        val pattern = com.conreo.couchytv.data.DATE_FORMATS
+        val pattern = dev.orionlabs.oriontv.data.DATE_FORMATS
             .getOrElse(config.dateFormat) { "" }
         if (pattern.isEmpty()) { value = ""; return@produceState }
         val fmt = SimpleDateFormat(pattern, locale)
@@ -545,7 +545,7 @@ fun LauncherApp(rescanTick: Int) {
         // changes, the previous video keeps playing until the new one is
         // picked, instead of flashing back to the preset background.
         val aerials = withContext(Dispatchers.IO) {
-            com.conreo.couchytv.data.BuiltinAerials.load(context, config.builtinSource)
+            dev.orionlabs.oriontv.data.BuiltinAerials.load(context, config.builtinSource)
         }
         if (aerials.isEmpty()) return@produceState
         // Pick one, different from the current so the uri always changes (which
@@ -1538,7 +1538,7 @@ private fun LoadingScreen() {
             label = "pulse",
         )
         Image(
-            painter = androidx.compose.ui.res.painterResource(com.conreo.couchytv.R.drawable.ic_couch),
+            painter = androidx.compose.ui.res.painterResource(dev.orionlabs.oriontv.R.drawable.ic_couch),
             contentDescription = null,
             modifier = Modifier
                 .size(88.dp)
