@@ -30,7 +30,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Compilar APKs (Debug y Release)
-        run: ./gradlew assembleDebug assembleRelease --no-daemon
+        run: ./gradlew assembleRelease --no-daemon
 
       - name: Subir APKs como artefactos descargables
         uses: actions/upload-artifact@v4
@@ -38,5 +38,4 @@ jobs:
           name: Orion-Launcher-APKs
           path: |
             app/build/outputs/apk/release/*.apk
-            app/build/outputs/apk/debug/*.apk
           retention-days: 14
