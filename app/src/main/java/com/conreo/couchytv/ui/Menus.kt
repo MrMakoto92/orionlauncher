@@ -1,4 +1,4 @@
-package com.conreo.couchytv.ui
+package dev.orionlabs.oriontv.ui
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
