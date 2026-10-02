@@ -2,55 +2,41 @@ name: Build Orion
 
 on:
   push:
+    branches: [ "main", "master" ]
     tags: ['v*']
   pull_request:
+  workflow_dispatch: # Permite ejecutar el build manualmente desde la pestaña Actions
 
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      - name: Configurar Java 17
+        uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
-      - uses: gradle/actions/setup-gradle@v4
 
-      # assembleRelease is the F-Droid variant (unsigned, proguard + shrink) —
-      # building it here catches any shrinker regression before submission.
-      # lintRelease gates real issues (e.g. InvalidVectorPath crash risks).
-      - name: Build (debug + unsigned release) and lint
-        run: ./gradlew assembleDebug assembleRelease lintRelease --no-daemon
+      - name: Configurar Gradle
+        uses: gradle/actions/setup-gradle@v4
 
-      # Tagged push → decode the keystore, sign, upload to the Release page.
-      - name: Decode keystore
-        if: startsWith(github.ref, 'refs/tags/v')
-        env:
-          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
-        # Strip whitespace/CR so a wrapped or copy-pasted secret still decodes.
-        run: echo "$KEYSTORE_BASE64" | tr -d '[:space:]' | base64 -d > /tmp/couchy-release.jks
+      - name: Dar permisos de ejecución a gradlew
+        run: chmod +x gradlew
 
-      - name: Build signed release
-        if: startsWith(github.ref, 'refs/tags/v')
-        env:
-          KEYSTORE_FILE: /tmp/couchy-release.jks
-          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
-          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
-          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
-        run: ./gradlew assembleRelease --no-daemon
+      - name: Compilar APKs (Debug y Release)
+        run: ./gradlew assembleDebug assembleRelease --no-daemon
 
-      - name: Upload to release
-        if: startsWith(github.ref, 'refs/tags/v')
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          APK="app/build/outputs/apk/release/app-release.apk"
-          RELEASE_APK="Orion-Launcher-${{ github.ref_name }}.apk"
-          cp "$APK" "$RELEASE_APK"
-          gh release delete "${{ github.ref_name }}" --yes --cleanup-tag 2>/dev/null || true
-          gh release create "${{ github.ref_name }}" \
-            "$RELEASE_APK" \
-            --title "Orion-Launcher ${{ github.ref_name }}" \
-            --generate-notes
+      - name: Subir APKs como artefactos descargables
+        uses: actions/upload-artifact@v4
+        with:
+          name: Orion-Launcher-APKs
+          path: |
+            app/build/outputs/apk/release/*.apk
+            app/build/outputs/apk/debug/*.apk
+          retention-days: 14
