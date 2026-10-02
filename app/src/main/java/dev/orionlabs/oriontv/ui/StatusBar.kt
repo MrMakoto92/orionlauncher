@@ -16,13 +16,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.conreo.couchytv.R
+import dev.orionlabs.oriontv.R
 import androidx.tv.material3.ClickableSurfaceDefaults
 import androidx.tv.material3.Icon
 import androidx.tv.material3.MaterialTheme
 import androidx.tv.material3.Surface
 import androidx.tv.material3.Text
-import com.conreo.couchytv.data.NetStatus
+import dev.orionlabs.oriontv.data.NetStatus
 
 @Composable
 fun StatusBar(
