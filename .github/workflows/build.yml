@@ -5,7 +5,7 @@ on:
     branches: [ "main", "master" ]
     tags: ['v*']
   pull_request:
-  workflow_dispatch: # Permite ejecutar el build manualmente desde la pestaña Actions
+  workflow_dispatch:
 
 jobs:
   build:
@@ -29,13 +29,24 @@ jobs:
       - name: Dar permisos de ejecución a gradlew
         run: chmod +x gradlew
 
-      - name: Compilar APKs (Debug y Release)
+      - name: Compilar APKs por Arquitectura (ARM 32 y 64 bit)
         run: ./gradlew assembleRelease --no-daemon
 
-      - name: Subir APKs como artefactos descargables
+      - name: Firmar APKs
+        id: sign_app
+        uses: r3d-buck/sign-android-release@v1
+        with:
+          releaseDirectory: app/build/outputs/apk/release
+          signingKeyBase64: ${{ secrets.KEYSTORE_BASE64 }}
+          alias: ${{ secrets.KEY_ALIAS }}
+          keyStorePassword: ${{ secrets.KEYSTORE_PASSWORD }}
+          keyPassword: ${{ secrets.KEY_PASSWORD }}
+
+      - name: Subir APKs firmadas como artefactos descargables
         uses: actions/upload-artifact@v4
         with:
-          name: Orion-Launcher-APKs
+          name: Orion-Launcher-ARM-APKs
           path: |
-            app/build/outputs/apk/release/*.apk
+            app/build/outputs/apk/release/*armeabi-v7a*-signed.apk
+            app/build/outputs/apk/release/*arm64-v8a*-signed.apk
           retention-days: 14
