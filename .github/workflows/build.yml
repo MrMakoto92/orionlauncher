@@ -29,16 +29,24 @@ jobs:
       - name: Dar permisos de ejecución a gradlew
         run: chmod +x gradlew
 
-      - name: Decodificar Keystore para firma
+      - name: Generar Keystore temporal
         run: |
-          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > $RUNNER_TEMP/keystore.jks
+          keytool -genkey -v \
+            -keystore $RUNNER_TEMP/keystore.jks \
+            -alias mykeyalias \
+            -keyalg RSA \
+            -keysize 2048 \
+            -validity 10000 \
+            -storepass mypassword \
+            -keypass mypassword \
+            -dname "CN=Orion, OU=Dev, O=Dev, L=City, ST=State, C=US"
 
       - name: Compilar y firmar APKs con Gradle
         env:
           KEYSTORE_FILE: ${{ runner.temp }}/keystore.jks
-          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
-          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
-          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+          KEYSTORE_PASSWORD: mypassword
+          KEY_ALIAS: mykeyalias
+          KEY_PASSWORD: mypassword
         run: ./gradlew assembleRelease --no-daemon
 
       - name: Subir APKs firmadas como artefactos descargables
