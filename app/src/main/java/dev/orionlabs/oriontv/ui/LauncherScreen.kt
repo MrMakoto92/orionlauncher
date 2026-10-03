@@ -250,28 +250,6 @@ fun LauncherApp(rescanTick: Int) {
         )
     }
 
-    if (!config.setupDone) {
-        ScaledUi(uiScale) {
-            LiteTvTheme(accent = ACCENTS[0]) {
-                SetupWizard(
-                    onDone = {
-                        scope.launch { store.update { it.copy(setupDone = true) } }
-                    },
-                    onVpnChosen = { pkg ->
-                        scope.launch {
-                            store.update {
-                                // Picked an app → VPN button opens it; skipped → hide it.
-                                if (pkg == null) it.copy(showVpnButton = false, vpnApp = "")
-                                else it.copy(showVpnButton = true, vpnApp = pkg)
-                            }
-                        }
-                    },
-                )
-            }
-        }
-        return
-    }
-
     // Hold the sober loading screen until the launcher can render COMPLETE —
     // every app scanned and every icon decoded.
     val apps = appsOrNull ?: run {
