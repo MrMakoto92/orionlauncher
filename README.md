@@ -57,7 +57,7 @@ Orion Launcher.
 
 ```sh
 adb connect <tv-ip>:5555
-adb install -r couchy-launcher.apk
+adb install -r orion-launcher.apk
 ```
 
 
@@ -65,12 +65,12 @@ adb install -r couchy-launcher.apk
 
 ## Set as default launcher
 
-**Generic Android TV / AOSP boxes** — press **Home**, pick **Couchy Launcher**, choose **Always**.
+**Generic Android TV / AOSP boxes** — press **Home**, pick **Orion Launcher**, choose **Always**.
 
 **Certified Google TV** — Google blocks the on-screen home picker, so set it once over ADB:
 
 ```sh
-adb shell cmd package set-home-activity com.conreo.couchytv/.MainActivity
+adb shell cmd package set-home-activity dev.orionlabs.oriontv/.MainActivity
 ```
 
 <details>
