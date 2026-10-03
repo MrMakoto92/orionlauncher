@@ -34,7 +34,7 @@ jobs:
 
       - name: Firmar APKs
         id: sign_app
-        uses: r3d-buck/sign-android-release@v1
+        uses: r2studio/android-sign-action@v1.4.0
         with:
           releaseDirectory: app/build/outputs/apk/release
           signingKeyBase64: ${{ secrets.KEYSTORE_BASE64 }}
