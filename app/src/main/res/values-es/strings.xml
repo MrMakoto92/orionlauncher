@@ -151,7 +151,7 @@
     <string name="about_desc">Orion Launcher es el entorno de inicio propietario y oficial desarrollado para impulsar el ecosistema OrionUI, diseñado exclusivamente para funcionar de manera optimizada en el dispositivo NVR ORION.\n\nConstruido desde cero para Android TV, Orion Launcher prioriza el rendimiento, la estabilidad y la fluidez de navegación, eliminando el consumo innecesario de recursos para ofrecer una experiencia limpia, inmediata y libre de distracciones.\n\n• Interfaz OrionUI Propietaria: Experiencia visual adaptada a pantallas de gran formato, garantizando legibilidad y navegación intuitiva a distancia.\n• Optimización D-Pad Nativa: Diseñado específicamente para un control fluido mediante mando a distancia, sin retardos en el enfoque.\n• Gestión Eficiente de Recursos: Arquitectura ligera que maximiza el rendimiento del hardware NVR ORION.\n• Acceso Directo y Personalizado: Estructura modular para la organización eficiente de tus aplicaciones.\n\nSistema Privado Autorizado • OrionUI Ecosystem</string>
     <string name="about_foss"></string>
     <string name="about_license"></string>
-    <string name="about_coffee" translatable="false">Escanea y revisa el código de Orion Launcher</string>
+    <string name="about_coffee" translatable="false">QR Github</string>
     <string name="github_url" translatable="false">https://github.com/MrMakoto92/orionlauncher</string>
     <string name="about_thirdparty"></string>
     <string name="rerun_wizard"></string>
