@@ -155,18 +155,18 @@
 
     <!-- Settings: about -->
     <string name="about_version">Version 1.0</string>
-    <string name="about_desc">A lightweight, one-screen launcher for Android TV and Google TV. No ads, no tracking, no background services.</string>
-    <string name="about_foss">Free &amp; open source</string>
-    <string name="about_license">Licensed under the GNU GPLv3 — use, study, share and modify freely.</string>
-    <string name="about_source">Source code</string>
-    <string name="about_coffee" translatable="false">Buy me a coffee</string>
-    <string name="github_url" translatable="false">https://github.com/conreo/couchy-launcher</string>
-    <string name="about_thirdparty">Orion artwork: Twemoji (MIT). Aerial videos: Apple, Amazon and community collections.</string>
-    <string name="rerun_wizard">Run setup wizard again</string>
-    <string name="rerun_wizard_sub">Default-launcher setup and first-run tips</string>
+    <string name="about_desc">Launcher oficial de OrionUI propiedad de Orion Labs.</string>
+    <string name="about_foss"></string>
+    <string name="about_license"></string>
+    <string name="about_source">Código Fuente</string>
+    <string name="about_coffee" translatable="false">Escanea y revisa el código de Orion Launcher</string>
+    <string name="github_url" translatable="false">https://github.com/MrMakoto92/orionlauncher</string>
+    <string name="about_thirdparty"></string>
+    <string name="rerun_wizard"></string>
+    <string name="rerun_wizard_sub"></string>
 
     <!-- Setup wizard -->
-    <string name="wizard_welcome_title">Welcome to Couchy Launcher</string>
+    <string name="wizard_welcome_title">Welcome to Orion Launcher</string>
     <string name="wizard_welcome_body">A lightweight, one-screen launcher: your apps grouped by section, your own wallpaper, and a clean status row with clock, network and VPN.</string>
     <string name="wizard_privacy_body">Privacy note — nothing to grant: Couchy requests no location, no microphone, and runs no background services. Everything it needs was granted at install.</string>
     <string name="wizard_home_title">Set as your home screen</string>
