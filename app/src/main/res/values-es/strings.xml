@@ -151,7 +151,6 @@
     <string name="about_desc">Launcher oficial de OrionUI propiedad de Orion Labs.</string>
     <string name="about_foss"></string>
     <string name="about_license"></string>
-    <string name="about_source">Código Fuente</string>
     <string name="about_coffee" translatable="false">Escanea y revisa el código de Orion Launcher</string>
     <string name="github_url" translatable="false">https://github.com/MrMakoto92/orionlauncher</string>
     <string name="about_thirdparty"></string>
