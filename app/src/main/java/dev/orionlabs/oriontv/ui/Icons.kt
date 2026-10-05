@@ -115,4 +115,7 @@ object AppIcons {
     val Grid3x3 by lazy {
         icon("Grid3x3", "M3 3h4v4H3zm7 0h4v4h-4zm7 0h4v4h-4zM3 10h4v4H3zm7 0h4v4h-4zm7 0h4v4h-4zM3 17h4v4H3zm7 0h4v4h-4zm7 0h4v4h-4z")
     }
+    val SecurityCamera by lazy {
+        icon("SecurityCamera", "M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z")
+    }
 }
