@@ -40,11 +40,11 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.withFrameNanos
 import androidx.compose.runtime.produceState
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
+import androidx.compose.runtime.withFrameNanos
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -56,8 +56,8 @@ import androidx.compose.ui.focus.focusRestorer
 import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.CompositingStrategy
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.CompositingStrategy
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.graphics.graphicsLayer
@@ -69,6 +69,7 @@ import androidx.compose.ui.input.key.type
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -76,6 +77,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.tv.material3.MaterialTheme
 import androidx.tv.material3.Text
 import dev.orionlabs.oriontv.Actions
+import dev.orionlabs.oriontv.R
 import dev.orionlabs.oriontv.data.AppEntry
 import dev.orionlabs.oriontv.data.AppRepository
 import dev.orionlabs.oriontv.data.ConfigStore
@@ -588,7 +590,7 @@ fun LauncherApp(rescanTick: Int) {
                 }
         ) {
             // Wallpaper + readability scrim.
-            // Priority: built-in aerials > local video > photo > preset.
+            // Priority: built-in aerials > local video > photo > default fallback.
             val videoSpeed = VIDEO_SPEEDS[config.videoSpeed.coerceIn(0, VIDEO_SPEEDS.size - 1)]
             val aerial = aerialWallpaper
             if (aerial != null && net.connected && !aerialError) {
@@ -613,7 +615,12 @@ fun LauncherApp(rescanTick: Int) {
                     modifier = Modifier.fillMaxSize(),
                 )
             } else {
-                Box(Modifier.fillMaxSize().background(presetBrush))
+                Image(
+                    painter = painterResource(R.drawable.default_wallpaper),
+                    contentDescription = null,
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier.fillMaxSize(),
+                )
             }
             // Dock-expanded overlay: cheap pseudo-blur (tiny bitmap upscaled)
             // + dim, crossfaded. Works identically on every Android version.
@@ -1435,7 +1442,7 @@ private fun VideoWallpaper(
                 if (state == androidx.media3.common.Player.STATE_ENDED) onEnded()
             }
             override fun onPlayerError(error: androidx.media3.common.PlaybackException) {
-                android.util.Log.w("LiteTV", "wallpaper play error ${error.errorCodeName}: $uri")
+                android.util.Log.w("LiteTV", "wallpaper play error ${error.errorCodeName}:$uri")
                 onError()
             }
         }
