@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@drawable/OrionLabsSplash" />
+    <item android:drawable="@drawable/orion_labs_splash" />
 </layer-list>
