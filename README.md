@@ -23,9 +23,9 @@
 
 Orion Launcher.
 
-| Main screen | Settings | First-run wizard |
+| Main screen | Settings | Branding |
 |:---:|:---:|:---:|
-| <img src="docs/img/aerial.png" width="100%"/> | <img src="docs/img/settings.png" width="100%"/> | <img src="docs/img/wizard.png" width="100%"/> |
+| <img src="docs/img/aerial.png" width="100%"/> | <img src="docs/img/settings.png" width="100%"/> | <img src="app/src/main/res/drawable/orion_labs_splash.jpg" width="100%"/> |
 
 ---
 
