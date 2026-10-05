@@ -59,7 +59,7 @@ fun StatusBar(
         // Order: VPN · network · settings · date · clock (clock far right)
         if (showVpn) {
             StatusIcon(
-                icon = AppIcons.Live,
+                icon = AppIcons.SecurityCamera,
                 active = net.vpn,
                 contentDescription = stringResource(R.string.cd_vpn),
                 onClick = onVpnClick,
