@@ -25,7 +25,7 @@
     <string name="minutes_short">%1$d min</string>
 
     <!-- Barra de estado -->
-    <string name="cd_vpn">VPN</string>
+    <string name="cd_vpn">Live</string>
     <string name="cd_network">Red</string>
     <string name="cd_settings">Ajustes</string>
 
@@ -141,10 +141,10 @@
     <string name="date_label">Fecha</string>
     <string name="statusbar_glass">Fondo de cristal</string>
     <string name="statusbar_glass_sub">Panel detrás de los iconos de estado, como el dock — sigue el ajuste de redondez</string>
-    <string name="show_vpn_button">Mostrar botón VPN</string>
-    <string name="vpn_opens">Botón VPN abre</string>
-    <string name="vpn_system">Ajustes VPN del sistema</string>
-    <string name="vpn_dialog_title">Botón VPN abre…</string>
+    <string name="show_vpn_button">Mostrar botón LIVE</string>
+    <string name="vpn_opens">Botón LIVE abre</string>
+    <string name="vpn_system">Seleccionar app de cctv</string>
+    <string name="vpn_dialog_title">Botón LIVE abre…</string>
 
     <!-- Ajustes: acerca de -->
     <string name="about_version">Version 1.0</string>
@@ -158,7 +158,7 @@
     <string name="rerun_wizard_sub"></string>
 
     <!-- Asistente -->
-    <string name="wizard_welcome_title">Bienvenido a Couchy Launcher</string>
+    <string name="wizard_welcome_title">Bienvenido a Orion Launcher</string>
     <string name="wizard_welcome_body">Un launcher ligero de una sola pantalla: sus apps agrupadas por sección, su propio fondo, y una barra de estado limpia con reloj, red y VPN.</string>
     <string name="wizard_privacy_body">Aviso de privacidad — nada que conceder: Couchy no solicita ubicación, micrófono ni ejecuta servicios en segundo plano. Todo lo necesario se concedió al instalar.</string>
     <string name="wizard_home_title">Establecer como pantalla de inicio</string>
