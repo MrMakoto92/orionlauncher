@@ -8,27 +8,36 @@ import dev.orionlabs.oriontv.MainActivity
 
 class HomeInterceptorService : AccessibilityService() {
 
+    override fun onServiceConnected() {
+        super.onServiceConnected()
+        // Cuando el servicio de accesibilidad se conecta, aseguramos que el launcher esté listo
+    }
+
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {
-        // No procesamos eventos de interfaz estándar (TalkBack, etc.)
+        // No procesamos eventos de interfaz estándar
     }
 
     override fun onInterrupt() {
-        // Callback si el servicio es interrumpido por el sistema
+        // Callback si el servicio es interrumpido
     }
 
-    /**
-     * Captura las pulsaciones de teclas físicas del control remoto.
-     */
     override fun onKeyEvent(event: KeyEvent): Boolean {
         if (event.keyCode == KeyEvent.KEYCODE_HOME) {
-            // Interceptamos la tecla al soltarla (ACTION_UP) para no disparar llamadas duplicadas
             if (event.action == KeyEvent.ACTION_UP) {
                 launchOrionLauncher()
             }
-            // Retornamos true para consumir el evento y evitar que el launcher por defecto responda
             return true
         }
         return super.onKeyEvent(event)
+    }
+
+    /**
+     * Si el sistema o una app limpiadora mata el proceso principal,
+     * este callback se dispara y relanza Orion Launcher al instante.
+     */
+    override fun onTaskRemoved(rootIntent: Intent?) {
+        super.onTaskRemoved(rootIntent)
+        launchOrionLauncher()
     }
 
     private fun launchOrionLauncher() {
