@@ -69,7 +69,7 @@
     <string name="item_wallpaper">Fondo de pantalla</string>
     <string name="item_wallpaper_sub">Color estático o foto, o un video en vivo</string>
     <string name="item_statusbar">Barra de estado</string>
-    <string name="item_statusbar_sub">Visibilidad, formato de reloj, app de VPN</string>
+    <string name="item_statusbar_sub">Visibilidad, formato de reloj, boton Live</string>
     <string name="item_about">Acerca de</string>
 
     <!-- Ajustes: pantalla -->
