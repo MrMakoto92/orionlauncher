@@ -1,5 +1,7 @@
 package dev.orionlabs.oriontv.ui
 
+import android.content.Intent
+import android.provider.Settings
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.togetherWith
@@ -68,6 +70,7 @@ import androidx.tv.material3.MaterialTheme
 import androidx.tv.material3.Surface
 import androidx.tv.material3.SurfaceDefaults
 import androidx.tv.material3.Text
+import androidx.tv.material3.TextButton
 import dev.orionlabs.oriontv.Actions
 import dev.orionlabs.oriontv.R
 import dev.orionlabs.oriontv.data.AppEntry
@@ -796,6 +799,7 @@ private fun LauncherSettingsSubscreen(
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
     var langScreen by remember { mutableStateOf(false) }
+    var showAccessibilityDialog by remember { mutableStateOf(false) }
 
     if (langScreen) {
         LanguageScreen(config = config, store = store, onBack = { langScreen = false })
@@ -846,6 +850,20 @@ private fun LauncherSettingsSubscreen(
             style = MaterialTheme.typography.titleLarge,
             modifier = Modifier.padding(bottom = 12.dp, start = 8.dp),
         )
+        val f = initialFocus()
+
+        // -------------------------------------------------------------------
+        // BOTÓN: Anular botón Home (Integrado aquí en Ajustes del Launcher)
+        // -------------------------------------------------------------------
+        SettingsItem(
+            selected = false,
+            onClick = { showAccessibilityDialog = true },
+            headlineContent = { Text(stringResource(R.string.settings_home_interceptor_title)) },
+            supportingContent = { Text(stringResource(R.string.settings_home_interceptor_summary)) },
+            leadingContent = { Icon(painter = androidx.compose.ui.res.painterResource(R.drawable.ic_couch), contentDescription = null, modifier = Modifier.size(24.dp)) },
+            modifier = Modifier.focusRequester(f),
+        )
+
         SettingsItem(
             selected = false,
             onClick = { langScreen = true },
@@ -874,6 +892,65 @@ private fun LauncherSettingsSubscreen(
             supportingContent = { Text(stringResource(R.string.rerun_wizard_sub)) },
             leadingContent = { Icon(AppIcons.Play, contentDescription = null) },
         )
+    }
+
+    // -----------------------------------------------------------------------
+    // Diálogo emergente de Permiso de Accesibilidad
+    // -----------------------------------------------------------------------
+    if (showAccessibilityDialog) {
+        Dialog(
+            onDismissRequest = { showAccessibilityDialog = false },
+            properties = DialogProperties(
+                dismissOnBackPress = true,
+                dismissOnClickOutside = true
+            )
+        ) {
+            Surface(
+                shape = RoundedCornerShape(16.dp),
+                colors = SurfaceDefaults.colors(containerColor = MaterialTheme.colorScheme.surface),
+            ) {
+                Column(
+                    Modifier.width(380.dp).padding(20.dp),
+                    verticalArrangement = Arrangement.spacedBy(14.dp)
+                ) {
+                    Text(
+                        text = stringResource(id = R.string.settings_accessibility_dialog_title),
+                        style = MaterialTheme.typography.titleMedium
+                    )
+                    Text(
+                        text = stringResource(id = R.string.settings_accessibility_dialog_message),
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        horizontalArrangement = Arrangement.spacedBy(10.dp, Alignment.End)
+                    ) {
+                        TextButton(
+                            onClick = { showAccessibilityDialog = false }
+                        ) {
+                            Text(text = stringResource(id = R.string.settings_accessibility_dialog_action_cancel))
+                        }
+                        Button(
+                            onClick = {
+                                showAccessibilityDialog = false
+                                // Abre directamente los Ajustes de Accesibilidad del sistema Android
+                                runCatching {
+                                    val intent = Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS).apply {
+                                        flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                                    }
+                                    context.startActivity(intent)
+                                }.onFailure {
+                                    Actions.toast(context, "No se pudieron abrir los ajustes de accesibilidad")
+                                }
+                            }
+                        ) {
+                            Text(text = stringResource(id = R.string.settings_accessibility_dialog_action_open))
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
