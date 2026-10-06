@@ -23,7 +23,7 @@
 
 Orion Launcher.
 
-| Main screen | Settings | Branding |
+| Main screen | Settings | OrionLabs |
 |:---:|:---:|:---:|
 | <img src="docs/img/aerial.png" width="100%"/> | <img src="docs/img/settings.png" width="100%"/> | <img src="app/src/main/res/drawable/orion_labs_splash.jpg" width="100%"/> |
 
@@ -31,8 +31,9 @@ Orion Launcher.
 
 ## Features
 
-**Soon** Working on Orion Launcher
-
+**Working on Orion Launcher**
+New: Rebranding from Couchy Launcher to Orion Launcher
+Newly added: 4 new icons for the internal interface
 
 ---
 
@@ -64,6 +65,9 @@ adb install -r orion-launcher.apk
 ---
 
 ## Set as default launcher
+
+**Integration with the accessibility system coming soon!!**
+> **It will be much easier to leave the launcher as the default**
 
 **Generic Android TV / AOSP boxes** — press **Home**, pick **Orion Launcher**, choose **Always**.
 
