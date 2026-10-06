@@ -70,7 +70,6 @@ import androidx.tv.material3.MaterialTheme
 import androidx.tv.material3.Surface
 import androidx.tv.material3.SurfaceDefaults
 import androidx.tv.material3.Text
-import androidx.tv.material3.TextButton
 import dev.orionlabs.oriontv.Actions
 import dev.orionlabs.oriontv.R
 import dev.orionlabs.oriontv.data.AppEntry
@@ -926,7 +925,7 @@ private fun LauncherSettingsSubscreen(
                         modifier = Modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.spacedBy(10.dp, Alignment.End)
                     ) {
-                        TextButton(
+                        Button(
                             onClick = { showAccessibilityDialog = false }
                         ) {
                             Text(text = stringResource(id = R.string.settings_accessibility_dialog_action_cancel))
