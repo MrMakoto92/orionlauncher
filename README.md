@@ -21,7 +21,7 @@
 
 </div>
 
-Orion Launcher.
+Orion Launcher Preview.
 
 | Main screen | Settings | OrionLabs |
 |:---:|:---:|:---:|
@@ -32,8 +32,8 @@ Orion Launcher.
 ## Features
 
 **Working on Orion Launcher**
-New: Rebranding from Couchy Launcher to Orion Launcher
-Newly added: 4 new icons for the internal interface
+- New: Rebranding from Couchy Launcher to Orion Launcher
+- Newly added: 4 new icons for the internal interface
 
 ---
 
