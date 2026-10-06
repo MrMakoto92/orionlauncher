@@ -165,7 +165,7 @@
     <string name="wizard_already_default">✓ Hecho — Couchy ya es su launcher por defecto en este dispositivo.</string>
     <string name="wizard_gtv_intro">Este es un dispositivo Google TV certificado. Google no permite cambiar la app de inicio desde los ajustes en pantalla, así que elija uno de estos dos métodos:</string>
     <string name="wizard_gtv_adb">1 — ADB (recomendado, una sola vez):\n• Ajustes &gt; Sistema &gt; Acerca de &gt; pulse «Versión de Android TV OS» 7 veces para desbloquear Opciones de desarrollo\n• Ajustes &gt; Sistema &gt; Opciones de desarrollo &gt; active Depuración USB/inalámbrica\n• Desde un PC en la misma red, ejecute:</string>
-    <string name="wizard_gtv_overlay">Si el launcher del sistema aún se superpone a Couchy después (visto en Hisense y otros), identifíquelo y desactívelo — reversible en cualquier momento con «pm enable»:</string>
+    <string name="wizard_gtv_overlay">Si el launcher del sistema aún se superpone a Couchy después (visto en Hisense y otros), identifíquelo y desactivalo — reversible en cualquier momento con «pm enable»:</string>
     <string name="wizard_gtv_which">(Use el paquete de los dos que indique el primer comando. Solo desactívelo DESPUÉS de confirmar que Couchy se abre bien.)</string>
     <string name="wizard_gtv_remap">2 — Reasignación de botón (sin PC): instale una app como «Button Mapper» de Play Store y asigne el botón Inicio a Couchy Launcher.</string>
     <string name="wizard_try_dialog">Probar diálogo del sistema igualmente</string>
@@ -195,4 +195,12 @@
     <string name="cd_move_down">Bajar</string>
     <string name="cd_delete_section">Eliminar sección</string>
     <string name="about_source">Código fuente</string>
+
+    <!-- Interceptor de Botón Home (Accesibilidad) -->
+    <string name="settings_home_interceptor_title">Anular botón Home</string>
+    <string name="settings_home_interceptor_summary">Usar Accesibilidad para forzar a Orion como launcher predeterminado.</string>
+    <string name="settings_accessibility_dialog_title">Se requiere Permiso de Accesibilidad</string>
+    <string name="settings_accessibility_dialog_message">Para que Orion Launcher pueda interceptar el botón Home y funcionar como predeterminado, necesitas activar manualmente el servicio en los ajustes del sistema.\n\nAl pulsar "Configurar", te llevaremos a la sección de Accesibilidad. Busca "Orion Launcher - Home Detector" y actívalo.</string>
+    <string name="settings_accessibility_dialog_action_open">Configurar</string>
+    <string name="settings_accessibility_dialog_action_cancel">Cancelar</string>
 </resources>
