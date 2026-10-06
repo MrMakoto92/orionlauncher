@@ -978,7 +978,7 @@ private fun StatusBarScreen(
             selected = false,
             onClick = { scope.launch { store.update { it.copy(showVpnButton = !it.showVpnButton) } } },
             headlineContent = { Text(stringResource(R.string.show_vpn_button)) },
-            leadingContent = { Icon(AppIcons.Vpn, contentDescription = null) },
+            leadingContent = { Icon(AppIcons.SecurityCamera, contentDescription = null) },
             trailingContent = { CheckMark(checked = config.showVpnButton) },
         )
         // Grayed out (and not focusable) while the VPN button is hidden
@@ -988,7 +988,7 @@ private fun StatusBarScreen(
             onClick = { pickVpn = true },
             headlineContent = { Text(stringResource(R.string.vpn_opens)) },
             supportingContent = { Text(vpnLabel) },
-            leadingContent = { Icon(AppIcons.Vpn, contentDescription = null) },
+            leadingContent = { Icon(AppIcons.SecurityCamera, contentDescription = null) },
         )
     }
 
