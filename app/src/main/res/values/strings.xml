@@ -196,4 +196,12 @@
     <string name="cd_move_up">Move up</string>
     <string name="cd_move_down">Move down</string>
     <string name="cd_delete_section">Delete section</string>
+
+    <!-- Home Button Interceptor (Accessibility) -->
+    <string name="settings_home_interceptor_title">Override Home button</string>
+    <string name="settings_home_interceptor_summary">Use Accessibility to force Orion as default launcher.</string>
+    <string name="settings_accessibility_dialog_title">Accessibility Permission Required</string>
+    <string name="settings_accessibility_dialog_message">For Orion Launcher to intercept the Home button and act as default, you need to manually enable the service in system settings.\n\nClicking "Configure" will take you to Accessibility settings. Look for "Orion Launcher - Home Detector" and enable it.</string>
+    <string name="settings_accessibility_dialog_action_open">Configure</string>
+    <string name="settings_accessibility_dialog_action_cancel">Cancel</string>
 </resources>
