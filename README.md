@@ -26,16 +26,23 @@
 ---
 
 <details>
-<summary>About</summary>
+<summary>Acerca de</summary>
   
-## New Features
+## Acerca de
+
+- Orion Launcher es el entorno de inicio propietario y oficial desarrollado para impulsar el ecosistema OrionUI, diseñado exclusivamente para funcionar de manera optimizada en el dispositivo NVR ORION.
+Reconstruido y basado en Couchy Launcher para Android TV, Orion Launcher prioriza el rendimiento, la estabilidad y la fluidez de navegación, eliminando el consumo innecesario de recursos para ofrecer una experiencia limpia, inmediata y libre de distracciones.
+
+---
+  
+## Nuevas funciones
 
 - New: Five new icons for the launcher's internal interface.
 - New: New way added to set the launcher as default using accessibility services.
 
 ---
 
-## Requirements
+## Requisitos
 
 - **Android TV or Google TV** (requires the `leanback` feature.
 - **Android 5.0 (Lollipop) or newer** — the whole Android TV lineage.
@@ -45,7 +52,7 @@
 
 ---
 
-## Privacy
+## Privacidad 
 
-No ads, analytics, accounts or background services (Accessibility service is Optional).
+Sin anuncios, Sin Analítica , El servicio de Accesibilidad es opcional pero puede que no funcione ( Establecer Launcher Predeterminado mediante Accesibilidad ).
 </details>
