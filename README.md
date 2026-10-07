@@ -2,16 +2,13 @@
 
 <div align="center">
 
-<img src="https://i.ibb.co/JjcKTBgG/White-Icon.png" width="120" alt="Couchy Launcher logo" />
+<img src="https://i.ibb.co/JjcKTBgG/White-Icon.png" width="120" alt="Orion Launcher logo" />
 
 # Orion Launcher
 
-**Launcher for OrionUI based on Couchy Launcher.**
+**The official Orion NVR Launcher developed by ORION LABS.**
 
-![License](https://img.shields.io/badge/license-GPLv3-blue)
 ![Platform](https://img.shields.io/badge/Android%20TV%20·%20Google%20TV-3DDC84?logo=android&logoColor=white)
-
-[**English**](#english) · [Licensing](LICENSING.md)
 
 
 
@@ -31,9 +28,8 @@ Orion Launcher Preview.
 
 ## Features
 
-**Working on Orion Launcher**
-- New: Rebranding from Couchy Launcher to Orion Launcher
-- Newly added: 4 new icons for the internal interface
+- New: Five new icons for the launcher's internal interface.
+- New: New way added to set the launcher as default using accessibility services.
 
 ---
 
@@ -66,8 +62,10 @@ adb install -r orion-launcher.apk
 
 ## Set as default launcher
 
-**Integration with the accessibility system coming soon!!**
-> **It will be much easier to leave the launcher as the default**
+**Integration with the accessibility:**
+```
+Finally, the way to set the default launcher through accessibility has been enabled. 
+```
 
 **Generic Android TV / AOSP boxes** — press **Home**, pick **Orion Launcher**, choose **Always**.
 
@@ -113,12 +111,10 @@ No ads, analytics, accounts or background services. The only network use is opti
 <details>
 <summary>Click to expand</summary>
 
-**v1.0**
-- Initial release Working on Orion Launcher, more news coming soon.
+**v1.0.6 By OrionLABS**
+- New: Five new icons for the launcher's internal interface.
+- New: New way added to set the launcher as default using accessibility services.
 </details>
 
-## License
-
-**GNU GPLv3** — free, open source, copyleft. See [LICENSING.md](LICENSING.md) for the app, artwork and bundled libraries.
 
 <br>
