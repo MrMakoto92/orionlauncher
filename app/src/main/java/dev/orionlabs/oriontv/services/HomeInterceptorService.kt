@@ -13,6 +13,11 @@ class HomeInterceptorService : AccessibilityService() {
         // Cuando el servicio de accesibilidad se conecta, aseguramos que el launcher esté listo
     }
 
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        // Indica al sistema que reasigne y reinicie el servicio si el proceso es eliminado
+        return START_STICKY
+    }
+
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {
         // No procesamos eventos de interfaz estándar
     }
@@ -32,7 +37,7 @@ class HomeInterceptorService : AccessibilityService() {
     }
 
     /**
-     * Si el sistema o una app limpiadora mata el proceso principal,
+     * Si el sistema, tvQuickActions Pro o una app limpiadora mata el proceso principal,
      * este callback se dispara y relanza Orion Launcher al instante.
      */
     override fun onTaskRemoved(rootIntent: Intent?) {
@@ -42,7 +47,9 @@ class HomeInterceptorService : AccessibilityService() {
 
     private fun launchOrionLauncher() {
         val intent = Intent(this, MainActivity::class.java).apply {
-            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or 
+                    Intent.FLAG_ACTIVITY_CLEAR_TOP or 
+                    Intent.FLAG_ACTIVITY_SINGLE_TOP
         }
         startActivity(intent)
     }
