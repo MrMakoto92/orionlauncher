@@ -37,18 +37,18 @@ Reconstruido y basado en Couchy Launcher para Android TV, Orion Launcher prioriz
   
 ## Nuevas funciones
 
-- New: Five new icons for the launcher's internal interface.
-- New: New way added to set the launcher as default using accessibility services.
+- New: Cinco nuevos iconos para la interfaz interna del lanzador.
+- New: Se ha añadido una nueva forma de configurar el lanzador como predeterminado mediante los servicios de accesibilidad.
 
 ---
 
 ## Requisitos
 
-- **Android TV or Google TV** (requires the `leanback` feature.
-- **Android 5.0 (Lollipop) or newer** — the whole Android TV lineage.
-- **ARM (32- or 64-bit)**
-- **No dependencies** — no companion app and **no Google Play Services** required; runs on AOSP boxes too.
-- Driven entirely by the **remote / D-pad**; no touchscreen needed.
+- **Android TV & Google TV** (requiere el función `leanback`).
+- **Android 5.0 (Lollipop) o más recientes**.
+- **ARM(32- or 64-bit)**
+- **Sin dependencias** — sin aplicación complementaria y **Sin servicios de Google Play** requerido; También funciona en sistemas AOSP.
+- Impulsado enteramente por el **D-pad**; no se necesita pantalla táctil.
 
 ---
 
